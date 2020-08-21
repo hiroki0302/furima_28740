@@ -27,27 +27,28 @@
 | description           | text  | null: false |
 | categories            | integer | null: false |
 | state                 | integer | null: false |
-| burden_of_delivery_charges | integer | null: false foreign_key: true |
+| burden_of_delivery_charges | integer | null: false |
 | ship_to_region             | integer | null: false |
 | day_to_ship                | integer | null: false |
 | price                      | integer | null: false |
 
 ### Association
 
-- has_one :purchases
-- belongs_to :users
+- has_one :purchase
+- belongs_to :user
 
 ## purchases テーブル
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| user_id | references | null: false, foreign_key: true |
+| user_id | integer | null: false, foreign_key: true |
 | item_id | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :users
 - belongs_to :items
+- has_one :Shipping Address
 
 ## Shipping Addresses テーブル
 
@@ -62,6 +63,5 @@
 
 ### Association
 
-- belongs_to :room
-- belongs_to :user
+- belongs_to :purchases
 
