@@ -31,6 +31,7 @@
 | ship_to_region             | integer | null: false |
 | day_to_ship                | integer | null: false |
 | price                      | integer | null: false |
+| user_id | integer | null: false, foreign_key: true |
 
 ### Association
 
