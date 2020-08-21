@@ -42,7 +42,7 @@
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
 | user_id | integer | null: false, foreign_key: true |
-| item_id | references | null: false, foreign_key: true |
+| item_id | integer | null: false, foreign_key: true |
 
 ### Association
 
@@ -60,6 +60,7 @@
 | block         | string     | null: false                    |
 | building      | string     |                                |
 | phone_number  | string     | null: false                    |
+| purchase_id   | integer    | null: false, foreign_key: true |
 
 ### Association
 
