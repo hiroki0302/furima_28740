@@ -7,7 +7,7 @@
 | nickname              | string | null: false |
 | email                 | string | null: false |
 | password              | string | null: false |
-| password confirmation | string | null: false |
+| password_confirmation | string | null: false |
 | last_name             | string | null: false |
 | first_name            | string | null: false |
 | last_name_kana        | string | null: false |
@@ -23,13 +23,13 @@
 
 | Column                     | Type    | Options     |
 | -------------------------- | ------- | ----------- |
-| item name                  | string  | null: false |
-| item description           | string  | null: false |
-| item categories            | integer | null: false |
-| item state                 | integer | null: false |
-| burden of delivery charges | integer | null: false |
-| ship to region             | integer | null: false |
-| day to ship                | integer | null: false |
+| name                  | string  | null: false |
+| description           | text  | null: false |
+| categories            | integer | null: false |
+| state                 | integer | null: false |
+| burden_of_delivery_charges | integer | null: false foreign_key: true |
+| ship_to_region             | integer | null: false |
+| day_to_ship                | integer | null: false |
 | price                      | integer | null: false |
 
 ### Association
@@ -49,16 +49,16 @@
 - belongs_to :users
 - belongs_to :items
 
-## Shipping Address テーブル
+## Shipping Addresses テーブル
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| post code     | integer    | null: false                    |
-| prefecture_id | string     | null: false                    |
+| post code     | string     | null: false                    |
+| prefecture_id | integer    | null: false                    |
 | city          | string     | null: false                    |
-| block         | integer    | null: false                    |
+| block         | string     | null: false                    |
 | building      | string     |                                |
-| phone_number  | integer    | null: false                    |
+| phone_number  | string     | null: false                    |
 
 ### Association
 
