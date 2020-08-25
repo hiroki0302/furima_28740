@@ -5,13 +5,20 @@ class ItemsController < ApplicationController
     @user = User.new
   end
 
-  # def new
-  # end
+  def edit
+  end
 
-  # def move_to_new
-  #   unless user_signed_in?
-  #     redirect_to action: :new
-  #   end
-  # end
+  def new
+  end
+
+  def move_to_new
+    unless user_signed_in?
+      redirect_to action: :new
+    end
+  end
+
+  def user_params
+    params.require(:user).permit(:email, :password)
+  end
 
 end
