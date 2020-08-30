@@ -18,7 +18,6 @@ describe Item do
 
   context '出品登録がうまくいかないとき' do
     it "userがログインしていない時" do
-      # binding.pry
       @item.user_id = ""
       @item.valid?
       expect(@item.errors.full_messages).to include("User must exist", "User can't be blank")
@@ -72,8 +71,14 @@ describe Item do
       expect(@item.errors.full_messages).to include("Price can't be blank")
     end
 
-    it "価格が¥300~¥9,999,999内でない時" do
+    it "価格が¥300未満の時" do
       @item.price = 200
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Price ¥300~¥9,999,999の間の金額にしてください")
+    end
+
+    it "価格が¥9,999,999以上の時" do
+      @item.price = "10000000"
       @item.valid?
       expect(@item.errors.full_messages).to include("Price ¥300~¥9,999,999の間の金額にしてください")
     end

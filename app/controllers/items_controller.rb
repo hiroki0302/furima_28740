@@ -27,9 +27,7 @@ class ItemsController < ApplicationController
     end
   end
 
-  def user_params
-    params.require(:user).permit(:email, :password)
-  end
+ 
 
   private
 
