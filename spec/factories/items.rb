@@ -1,12 +1,12 @@
 FactoryBot.define do
-  factory :items do
-    nama                          {"メンズ"}
-    descripton                    {"良質な皮を使用し作られている"}
-    category                      {"バッグ"}
-    state                         {"新品、未使用"}
-    burden_of_delivery_charge     {"着払い(購入者負担)"}
-    ship_to_region                {"北海道"}
-    day_to_ship                   {"1~2日で発送"}
-    price                         {"10000"}
+  factory :item do
+    name                            {"バッグ"}
+    description                     {"使いやすい"}
+    category_id                     {1}
+    state_id                        {1}
+    burden_of_delivery_charge_id    {1}
+    ship_to_region_id               {1}
+    day_to_ship_id                  {1}
+    price                           {10000}
   end
 end
