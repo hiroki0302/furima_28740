@@ -23,11 +23,11 @@
 
 | Column                     | Type    | Options     |
 | -------------------------- | ------- | ----------- |
-| name                  | string  | null: false |
-| description           | text  | null: false |
-| categories            | integer | null: false |
-| state                 | integer | null: false |
-| burden_of_delivery_charges | integer | null: false |
+| name                       | string  | null: false |
+| description                | text    | null: false |
+| category                   | integer | null: false |
+| state                      | integer | null: false |
+| burden_of_delivery_charge  | integer | null: false |
 | ship_to_region             | integer | null: false |
 | day_to_ship                | integer | null: false |
 | price                      | integer | null: false |
