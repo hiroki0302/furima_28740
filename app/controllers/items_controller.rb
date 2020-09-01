@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user! , only: [:edit, :show, :new]
 
   def index
+    @items = Item.all
   end
 
   def edit
@@ -27,7 +28,8 @@ class ItemsController < ApplicationController
     end
   end
 
- 
+  def update
+  end
 
   private
 
