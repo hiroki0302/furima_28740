@@ -1,8 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user! , only: [:edit, :show, :new]
+  before_action :authenticate_user! , only: [:edit, :new]
 
   def index
-    #binding.pry
     @items = Item.all.order("created_at DESC")
   end
 
@@ -22,11 +21,8 @@ class ItemsController < ApplicationController
     end
   end
 
-
-  def move_to_new
-    unless user_signed_in?
-      redirect_to action: :new
-    end
+  def show
+   @item = Item.find(params[:id])
   end
 
   def update
