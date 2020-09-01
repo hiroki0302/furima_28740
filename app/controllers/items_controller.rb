@@ -2,6 +2,8 @@ class ItemsController < ApplicationController
   before_action :authenticate_user! , only: [:edit, :show, :new]
 
   def index
+    #binding.pry
+    @items = Item.all.order("created_at DESC")
   end
 
   def edit
@@ -27,7 +29,8 @@ class ItemsController < ApplicationController
     end
   end
 
- 
+  def update
+  end
 
   private
 

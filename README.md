@@ -49,7 +49,7 @@
 
 - belongs_to :user
 - belongs_to :item
-- has_one :Shipping Address
+- has_one :Shipping
 
 ## Shipping Addresses テーブル
 
