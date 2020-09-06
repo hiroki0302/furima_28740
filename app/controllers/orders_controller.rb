@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   before_action :item_data, only: [:create, :index]
   before_action :check, only: [:index]
+  before_action :not, only: [:index]
+  before_action :curent, only: [:index]
 
   def index
     @user_purchase = UserPurchase.new
@@ -44,6 +46,16 @@ class OrdersController < ApplicationController
     end
   end
 
-  
+  def not
+    if @item.purchase
+      redirect_to root_path
+    end
+  end
+
+  def curent
+    if @item.user.id == current_user.id
+      redirect_to root_path
+    end
+  end
 
 end
