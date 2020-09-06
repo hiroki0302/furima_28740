@@ -1,5 +1,5 @@
 class Shipping < ApplicationRecord
-  belongs_to :purchases
+  belongs_to :purchase
 
-  validates :name, presence: true
+
 end
