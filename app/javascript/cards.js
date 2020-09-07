@@ -3,7 +3,7 @@ const pay = () => {
   const form = document.getElementById('charge_form');
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    
+    alert(process.env.PAYJP_PUBLIC_KEY)
 
     const formResult = document.getElementById('charge_form');
     const formData = new FormData(formResult);
@@ -14,10 +14,6 @@ const pay = () => {
       exp_month: formData.get("user_purchase[exp_month]"),
       exp_year: `20${formData.get("user_purchase[exp_year]")}`,
     };
-    alert(formData.get("user_purchase[number]"))
-    alert(formData.get("user_purchase[cvc]"))
-    alert(formData.get("user_purchase[exp_month]"))
-    alert(`20${formData.get("user_purchase[exp_year]")}`)
 
     Payjp.createToken(card, (status, response) => {
       alert("ok")
